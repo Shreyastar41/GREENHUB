@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>Grow a Better Tomorrow with GreenPulse</h1>
+    <p>Track community plantations, map impact, and build greener neighborhoods together.</p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ url_for('add_plantation') if g.user else url_for('login') }}">Start Planting</a>
+      <a class="btn ghost" href="{{ url_for('records') }}">View Records</a>
+    </div>
+    <div class="mini-stats">
+      <span><strong>{{ total_trees }}</strong> trees tracked</span>
+      <span><strong>{{ total_users }}</strong> eco-volunteers</span>
+    </div>
+  </div>
+  <div class="hero-plant">
+    <div class="soil"></div>
+    <div class="stem"></div>
+    <div class="leaf leaf-l"></div>
+    <div class="leaf leaf-r"></div>
+    <div class="leaf leaf-top"></div>
+  </div>
+</section>
+
+<section class="feature-grid">
+  <article class="card">
+    <h3>📍 Geo-Smart Logging</h3>
+    <p>Auto-capture latitude and longitude using browser geolocation for accurate plantation mapping.</p>
+  </article>
+  <article class="card">
+    <h3>🖼️ Visual Growth Journal</h3>
+    <p>Upload tree photos and create a realistic progress trail for every plant your community nurtures.</p>
+  </article>
+  <article class="card">
+    <h3>📊 Eco Impact Dashboard</h3>
+    <p>See total trees, personal contribution, and estimated CO₂ savings in animated impact widgets.</p>
+  </article>
+</section>
+{% endblock %}

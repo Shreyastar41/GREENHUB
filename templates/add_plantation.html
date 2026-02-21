@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>Add Plantation Record</h2>
+  <form method="post" enctype="multipart/form-data" class="form-grid card">
+    <label>Tree Name
+      <input type="text" name="tree_name" placeholder="Neem / Banyan / Mango" required>
+    </label>
+    <label>Plantation Date
+      <input type="date" name="plantation_date" required>
+    </label>
+    <label class="full">Location (manual text)
+      <input type="text" name="location_text" id="location_text" placeholder="Park name, city, landmark" required>
+    </label>
+    <label>Latitude
+      <input type="text" name="latitude" id="latitude" readonly>
+    </label>
+    <label>Longitude
+      <input type="text" name="longitude" id="longitude" readonly>
+    </label>
+    <label class="full">Tree Photo (JPG/PNG)
+      <input type="file" name="image" accept=".jpg,.jpeg,.png">
+    </label>
+    <div class="full">
+      <button class="btn" type="button" id="geoBtn">Auto Detect Location</button>
+      <button class="btn" type="submit">Save Plantation</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+greenpulse.db
+.env
+static/uploads/*
+!static/uploads/.gitkeep
