@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="auth-section">
+  <form method="post" class="auth-card slide-up">
+    <h2>Create Account</h2>
+    <p>Join GreenPulse and start your plantation journey.</p>
+    <label>Username <input type="text" name="username" required></label>
+    <label>Email <input type="email" name="email" required></label>
+    <label>Password <input type="password" name="password" required></label>
+    <label>Confirm Password <input type="password" name="confirm_password" required></label>
+    <button class="btn" type="submit">Register</button>
+  </form>
+</section>
+{% endblock %}

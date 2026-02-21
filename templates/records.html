@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <div class="section-head">
+    <h2>Plantation Records</h2>
+    <div class="filter">
+      <a class="btn ghost" href="{{ url_for('records', user='all') }}">All</a>
+      {% if g.user %}<a class="btn ghost" href="{{ url_for('records', user='mine') }}">My Trees</a>{% endif %}
+    </div>
+  </div>
+
+  <div class="card-grid">
+    {% for row in records %}
+      <article class="record-card pop-in">
+        {% if row.image_filename %}
+          <img src="{{ url_for('static', filename='uploads/' ~ row.image_filename) }}" alt="{{ row.tree_name }}">
+        {% else %}
+          <div class="placeholder">🌱</div>
+        {% endif %}
+        <h3>{{ row.tree_name }}</h3>
+        <p><strong>By:</strong> {{ row.username }}</p>
+        <p><strong>Date:</strong> {{ row.plantation_date }}</p>
+        <p><strong>Location:</strong> {{ row.location_text }}</p>
+        <span class="status">{{ row.status }}</span>
+      </article>
+    {% else %}
+      <p>No plantations added yet. Be the first green hero!</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

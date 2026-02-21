@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>Impact Dashboard</h2>
+  <div class="stats-grid">
+    <div class="metric card">
+      <h3>Total Trees</h3>
+      <p class="counter" data-target="{{ total_trees }}">0</p>
+    </div>
+    <div class="metric card">
+      <h3>My Trees</h3>
+      <p class="counter" data-target="{{ my_trees }}">0</p>
+    </div>
+    <div class="metric card">
+      <h3>CO₂ Saved (kg est.)</h3>
+      <p class="counter" data-target="{{ co2_saved }}">0</p>
+    </div>
+  </div>
+
+  <div class="card progress-wrap">
+    <h3>Personal Growth Progress (Goal: 20 Trees)</h3>
+    <div class="progress-bar">
+      <span style="width: {{ progress_pct }}%"></span>
+    </div>
+    <p>{{ progress_pct }}% Complete</p>
+  </div>
+</section>
+{% endblock %}
